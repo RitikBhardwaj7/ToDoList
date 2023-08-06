@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+
+            <div class="add-item">
+                <div class="add-item-container">
+                    <h2>Add a new task</h2>
+
+
+                    <form class="form" action="submit" method="post">
+                        <input class="input" type="text" placeholder="Enter a Task" name="taskName">
+                        <button class="submit-button" type="submit"><span class="material-symbols-outlined">
+                            add_circle
+                            </span></button>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="item-list">
+                <div class="item-list-container">
+                    <h2>Taday's tasks</h2>
+
+                    <!-- <div class="task">
+                        <p class="task-label-empty">Add a task first</p>
+                    </div> -->
+<% if (locals.taskList) { %>
+ <% taskList.forEach(element => { %>
+    <div class="task">
+        <input type="checkbox" name="checkbox" id="taskCheck">
+        <p class="task-label">
+            <%= element %>
+        </p>
+    </div>
+    <% }) %>
+<% } %>
+
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
